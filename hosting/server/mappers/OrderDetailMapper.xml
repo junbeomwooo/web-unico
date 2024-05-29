@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="OrderDetailMapper">
+
+    <!-- 다중행 주문내역 조회 -->
+    <select id="selectList">
+        SELECT orderno, email, name, gender, phonenumber, address, city, zipcode, province, country, tprice, quantity, status, payment_method, order_date, member_userno, product_prodno FROM order_detail
+        <where>
+            <!-- 멤버번호가 있을 경우 -->
+            <if test="member_userno != null and member_userno != ''">
+                member_userno = #{member_userno}
+            </if>
+             <!-- 년도를 구별하는 orderDateFilter가 비어있지 않은 경우-->
+            <if test="orderDateFilter != null and orderDateFilter != ''">
+                AND YEAR(order_date) = #{orderDateFilter}
+            </if>
+            <!-- 이메일이 있을 경우 -->
+            <if test="email != null and email != ''">
+                AND email LIKE concat('%', #{email}, '%')
+            </if>
+              <!-- 주문현황이 있을 경우 -->
+            <if test="orderStatus != null and orderStatus !='' ">
+                AND status = #{orderStatus}
+            </if>
+              <!-- 결제방법이 있을경우 -->
+            <if test="orderMethod != null and orderMethod !='' ">
+                AND payment_method = #{orderMethod}
+            </if>
+            <!-- 특정 기간 조회 -->
+            <if test="startDate != null and endDate != null">
+                AND order_date BETWEEN #{startDate} AND #{endDate}
+            </if>
+        </where>
+        <!-- 정렬 순을 위해 -->
+        <if test="sortOption != null and sortOption != ''">
+              <choose>
+                <when test="sortOption === 'descend'">
+                ORDER BY tprice DESC
+                </when>
+                <when test="sortOption === 'ascend'">
+                ORDER BY tprice ASC
+                </when>
+                <otherwise>
+                ORDER BY orderno ${sortOption}
+                </otherwise>
+            </choose>
+        </if>
+        <if test="sortBy != null and sortBy != '' and sortOrder != null and sortOrder != ''">
+            ORDER BY ${sortBy} ${sortOrder}
+        </if>
+        <!-- 페이지 구현을 위한 LIMIT절 추가, 보안에 취약하지만 limit절은 '%'사용불가, listCount가 존재하거나 0보다 클 경우에만 실행--> 
+        <if test="listCount > 0">
+            LIMIT ${offset}, ${listCount} 
+        </if>
+    </select>
+
+    <!-- 주문번호를 통한 주문내역 조회 -->
+    <select id="selectItem">
+        SELECT orderno, email, name, gender, phonenumber, address, city, zipcode, province, country, tprice, quantity, status, payment_method, order_date, member_userno, product_prodno
+        FROM order_detail
+        WHERE orderno = #{orderno};
+    </select>
+    
+    <!-- 주문내역 저장 -->
+     <insert id="insertItem">
+        INSERT INTO order_detail (email, name, gender, phonenumber, address, city, zipcode, province, country, tprice, quantity, status, payment_method, order_date, member_userno, product_prodno)
+        VALUES (#{email}, #{name}, #{gender}, #{phonenumber}, #{address}, #{city}, #{zipcode}, #{province}, #{country}, #{tprice}, #{quantity}, #{status}, #{payment_method}, #{order_date}, #{member_userno}, #{product_prodno});
+     </insert>
+
+    <!-- 환불시 orderno값을 이용해 환불상태로 데이터값 변경-->
+    <update id="updateItem">
+        UPDATE order_detail SET status=#{status}
+        WHERE orderno=#{orderno}
+    </update>
+
+    <!-- 1111111 계정 이름을 통한 한 명의 회원 정보 조회를 위한 기능 -->
+    <select id="searchAccount">
+        SELECT userno, account, userpw, name, gender, birthdate, phonenumber, address, city, zipcode, province, country, reg_date, is_out, is_admin FROM member WHERE account = #{account};
+    </select>
+
+     <!-- 전체 데이터 수 조회 -->
+    <select id="selectCountAll">
+        SELECT COUNT(*) AS cnt FROM order_detail
+        <where>
+            <if test="member_userno != null and member_userno != ''">
+                member_userno = #{member_userno}
+            </if>
+            <if test="email != null and email != ''">
+                AND email LIKE concat('%', #{email}, '%')
+            </if>
+            <if test="orderStatus != null and orderStatus !='' ">
+                AND status = #{orderStatus}
+            </if>
+            <if test="orderMethod != null and orderMethod !='' ">
+                AND payment_method = #{orderMethod}
+            </if>
+            <if test="startDate != null and endDate != null">
+                AND order_date BETWEEN #{startDate} AND #{endDate}
+            </if>
+        </where>
+    </select>
+
+
+    <!-- prodno값을 통한 삭제-->
+    <delete id="deleteByProdno">
+        DELETE FROM order_detail WHERE product_prodno=#{prodno};
+    </delete>
+
+
+</mapper>
