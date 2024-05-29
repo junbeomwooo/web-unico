@@ -37,10 +37,10 @@ const { PageNotFoundException } = require("./helper/ExceptionHelper");
 const app = express();
 
 // 설정 파일 내용 가져오기
-const configFileName =
-  process.env.NODE_ENV !== "production"
-    ? ".env.server.development"
-    : ".env.server.production";
+const configFileName = ".env.server.production"
+  // process.env.NODE_ENV !== "production"
+  //   ? ".env.server.development"
+  //   : ".env.server.production";
 const configPath = join(resolve(), configFileName);
 
 // 파일이 존재하지 않을 경우 강제로 에러 발생함
