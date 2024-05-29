@@ -159,10 +159,6 @@ module.exports = (() => {
       regexHelper.eng(processedName, "Please enter name in English.");
       regexHelper.value(gender, "Please select gender.");
       regexHelper.value(processedPhone, "Please enter your phone number.");
-      regexHelper.phone(
-        processedPhone,
-        "Please enter correct phone number format."
-      );
       regexHelper.value(processedAddress, "Please enter your address.");
       regexHelper.value(processedCity, "Please enter your city.");
       regexHelper.value(processedZipcode, "Please enter your zipcode.");
