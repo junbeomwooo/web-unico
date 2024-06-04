@@ -1,9 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.7a20afcd.css",
-    "main.js": "/static/js/main.935bd06a.js",
-    "static/media/1.avif": "/static/media/1.183638646fe62a914062.avif",
-    "static/media/2.avif": "/static/media/2.beaf33576a5c08c509d3.avif",
+    "main.js": "/static/js/main.d42ad24c.js",
+    "static/media/mobile3.jpg": "/static/media/mobile3.a8e3c21ae57499a965d4.jpg",
+    "static/media/mobile4.jpg": "/static/media/mobile4.d320486794475d847265.jpg",
+    "static/media/mobile2.jpg": "/static/media/mobile2.0bc61f19ebb92513a6ae.jpg",
+    "static/media/3.avif": "/static/media/3.183638646fe62a914062.avif",
+    "static/media/mobile1.jpg": "/static/media/mobile1.b8ec4569ce327cb178ca.jpg",
+    "static/media/4.avif": "/static/media/4.beaf33576a5c08c509d3.avif",
     "static/media/maison.png": "/static/media/maison.a654da831e0146d4feb5.png",
     "static/media/glasses.png": "/static/media/glasses.8b66887df38f3a976e53.png",
     "static/media/sunglasses.png": "/static/media/sunglasses.0e5e0ffdbde4526593d4.png",
@@ -12,10 +16,10 @@
     "static/media/search.png": "/static/media/search.f2d70afd1ebdca42594e.png",
     "index.html": "/index.html",
     "main.7a20afcd.css.map": "/static/css/main.7a20afcd.css.map",
-    "main.935bd06a.js.map": "/static/js/main.935bd06a.js.map"
+    "main.d42ad24c.js.map": "/static/js/main.d42ad24c.js.map"
   },
   "entrypoints": [
     "static/css/main.7a20afcd.css",
-    "static/js/main.935bd06a.js"
+    "static/js/main.d42ad24c.js"
   ]
 }

@@ -207,14 +207,14 @@ const AdminNavigation = memo(() => {
   }, []);
 
   /** 렌더링 시 실행 */
-  // useEffect(() => {
-  //   dispatch(loginCheck()).then(({ payload }) => {
-  //     if (!payload?.item || payload?.item?.is_admin === 'N') {
-  //       window.alert("You are not authorized to access this page.");
-  //       navigate("/");
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    dispatch(loginCheck()).then(({ payload }) => {
+      if (!payload?.item || payload?.item?.is_admin === 'N') {
+        window.alert("You are not authorized to access this page.");
+        navigate("/");
+      }
+    });
+  }, []);
 
   /** 관리자 페이지인지 판별
    * 판별 후 관리자 페이지가 아니라면 렌더링하지 않음
