@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginCheck, putMyInfo } from "../slices/MemberSlice";
 import regexHelper from "../helper/RegexHelper";
 import Spinner from "../components/Spinner";
+import mq from '../MediaQuery/MediaQuery';
 
 const Container = styled.form`
   padding-top: 100px;
@@ -17,6 +18,10 @@ const Container = styled.form`
     margin-top: 150px;
     width: 450px;
     height: auto;
+
+    ${mq.maxWidth("xsm")`
+        width: 300px;  
+    `}
 
     h1 {
       font-size: 18px;
@@ -69,8 +74,12 @@ const Container = styled.form`
       justify-content: space-between;
       width: 462px;
       margin-top: 0px;
+
+      ${mq.maxWidth("xsm")`
+        width: 300px;  
+    `}
       input {
-        width: 46%;
+        width: 44%;
       }
     }
 
@@ -78,6 +87,10 @@ const Container = styled.form`
       display: flex;
       justify-content: space-between;
       width: 462px;
+
+      ${mq.maxWidth("xsm")`
+        width: 300px;  
+    `}
 
       div {
         width: 31%;
@@ -115,6 +128,10 @@ const Container = styled.form`
           overflow: auto;
           margin-left: -1px;
 
+          ${mq.maxWidth("xsm")`
+        width: 300px;  
+    `}
+
           ul {
             margin: 0;
             padding: 0;
@@ -135,6 +152,10 @@ const Container = styled.form`
       background: none;
       box-sizing: border-box;
       position: relative;
+
+      ${mq.maxWidth("xsm")`
+        width: 300px;  
+    `}
 
       span {
         font-size: 15px;
@@ -176,13 +197,21 @@ const Container = styled.form`
         }
       }
     }
-
+    .phone {
+      ${mq.maxWidth("xsm")`
+        width: 290px;
+    `}
+    }
     .submit {
       display: flex;
       justify-content: space-between;
       width: 462px;
       margin-top: 60px;
       margin-bottom: 100px;
+
+      ${mq.maxWidth("xsm")`
+        width: 300px;  
+    `}
 
       button {
         width: 46%;
@@ -531,7 +560,7 @@ const CreateAcc = memo(() => {
               )}
             </div>
             <h2>Phone Number</h2>
-            <input type="tel" name="phonenumber" defaultValue={phonenumber} />
+            <input className="phone" type="tel" name="phonenumber" defaultValue={phonenumber} />
             <div className="submit">
               <button onClick={onClickCancle}>Cancel</button>
               <button type="submit">Submit</button>

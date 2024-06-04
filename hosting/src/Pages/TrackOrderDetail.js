@@ -24,6 +24,10 @@ const ProductContainer = styled.div`
     width: 450px;
   `}
 
+${mq.maxWidth("xsm")`
+    width: 300px;
+    `}
+
   .container {
     hr {
       color: #e0e0e0;
@@ -140,6 +144,10 @@ const Container = styled.div`
   width: 450px;
   margin: auto;
   margin-bottom: 200px;
+
+  ${mq.maxWidth("xsm")`
+    width: 300px;
+    `}
 
   hr {
     margin: 50px 0;

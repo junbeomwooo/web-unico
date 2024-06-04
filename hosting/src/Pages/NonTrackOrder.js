@@ -20,10 +20,13 @@ const Box = styled.div`
   ${mq.maxWidth("md")`
       padding: 0 50px;
     `}
+      ${mq.maxWidth("xsm")`
+      padding: 0 25px;
+    `}
  .sort {
     position: absolute;
     right: 4%;
-    top: 17%;
+    margin-top: 168px;
     display: flex;
     flex-direction: column;
     height: ${({ sortopen }) => (sortopen === "true" ? "165px" : "20px")};
@@ -36,6 +39,8 @@ const Box = styled.div`
         width: 80px;
     `}
 
+
+
     button {
       border: none;
       font-weight: 500;
@@ -45,6 +50,10 @@ const Box = styled.div`
 
       ${mq.maxWidth("md")`
         font-size: 12.5px;
+    `}
+
+${mq.maxWidth("xsm")`
+          font-size: 11px;
     `}
 
       &:hover {
@@ -222,15 +231,14 @@ const NonTrackOrder = memo(() => {
     const targetUrl = `${pathname}?${qs}`;
     navigate(targetUrl);
   };
-  
-    // 주문상세정보 이동
-    const moveToOrderDetail = useCallback((e) => {
-      const orderno = e.currentTarget.dataset.orderno;
-      e.preventDefault();
-  
-      navigate(`/customer_service/track_orderDetail/${orderno}`);
-    },[]);
-  
+
+  // 주문상세정보 이동
+  const moveToOrderDetail = useCallback((e) => {
+    const orderno = e.currentTarget.dataset.orderno;
+    e.preventDefault();
+
+    navigate(`/customer_service/track_orderDetail/${orderno}`);
+  }, []);
 
   /** 정렬 기준 */
   const onClickFilter = useCallback(

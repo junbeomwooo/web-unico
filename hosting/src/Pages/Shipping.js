@@ -25,6 +25,10 @@ const ShippingForm = styled.form`
     width: 450px;
     height: auto;
 
+    ${mq.maxWidth("xsm")`
+       width: 300px;
+    `}
+
     p {
       font-size: 13px;
     }
@@ -62,8 +66,12 @@ const ShippingForm = styled.form`
       justify-content: space-between;
       width: 462px;
       margin-top: 0px;
+
+      ${mq.maxWidth("xsm")`
+       width: 312px;
+    `}
       input {
-        width: 46%;
+        width: 44%;
       }
     }
 
@@ -74,6 +82,10 @@ const ShippingForm = styled.form`
       background: none;
       box-sizing: border-box;
       position: relative;
+
+      ${mq.maxWidth("xsm")`
+       width: 312px;
+    `}
 
       span {
         font-size: 15px;
@@ -131,6 +143,10 @@ const ShippingForm = styled.form`
         box-sizing: border-box;
         position: relative;
 
+        ${mq.maxWidth("xsm")`
+       width: 312px;
+    `}
+
         span {
           font-size: 15px;
           padding: 10px 0 0 10px;
@@ -181,6 +197,10 @@ const ShippingForm = styled.form`
       margin-top: 20px;
       margin-bottom: 200px;
 
+      ${mq.maxWidth("xsm")`
+       width: 312px;
+    `}
+
       button {
         width: 46%;
         box-sizing: border-box;
@@ -215,6 +235,10 @@ const ProductContainer = styled.div`
     margin-top: -170px;
     margin-bottom: 150px;
   `}
+
+${mq.maxWidth("xsm")`
+       width: 300px;
+    `}
 
   .container {
     hr {
@@ -366,7 +390,7 @@ const Shipping = memo(() => {
 
   //드롭다운 성별 상태값관리
   const [genderDropDown, setGenderDropDown] = useState(false);
-  
+
   //로그인이 되어 있는 상태인지 data.gender값이 존재하는지 확인 후 저장된 값이 M이라면 male, 아니라면 female을 보여주고 O일경우 Others 보여주기
   const [selectedGender, setSelectedGender] = useState(
     data?.gender
@@ -627,7 +651,7 @@ const Shipping = memo(() => {
   // 취소버튼 클릭
   const onClcikCancle = useCallback((e) => {
     e.preventDefault();
-    navigate('/');
+    navigate("/");
   });
 
   // onSubmitMember 이벤트
@@ -703,7 +727,7 @@ const Shipping = memo(() => {
           products: productProdno,
         })
       ).then((response) => {
-        if(response.payload.rtcode === 200) {
+        if (response.payload.rtcode === 200) {
           navigate("/checkout_payment");
         }
       });
@@ -724,7 +748,7 @@ const Shipping = memo(() => {
           products: productProdno,
         })
       ).then((response) => {
-        if(response.payload.rtcode === 200) {
+        if (response.payload.rtcode === 200) {
           navigate("/checkout_payment");
         }
       });
@@ -836,7 +860,7 @@ const Shipping = memo(() => {
                 </div>
               </div>
               <div className="submit">
-                <button onClick ={onClcikCancle}>Cancel</button>
+                <button onClick={onClcikCancle}>Cancel</button>
                 <button type="submit">Next</button>
               </div>
             </div>
@@ -870,10 +894,7 @@ const Shipping = memo(() => {
                       productProdno.push(cartInfo?.product_prodno);
                       return (
                         <div className="productBox" key={i}>
-                          <img
-                            src={v.img1}
-                            alt={v.title}
-                          />
+                          <img src={v.img1} alt={v.title} />
                           <div className="productInfo">
                             <div className="nameAndPrice">
                               <h2>{v.title}</h2>
@@ -952,10 +973,7 @@ const Shipping = memo(() => {
                     productProdno.push(cartInfo?.product_prodno);
                     return (
                       <div className="productBox" key={i}>
-                        <img
-                          src={v.img1}
-                          alt={v.title}
-                        />
+                        <img src={v.img1} alt={v.title} />
                         <div className="productInfo">
                           <div className="nameAndPrice">
                             <h2>{v.title}</h2>

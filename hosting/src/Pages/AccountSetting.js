@@ -88,6 +88,11 @@ const Navigator = styled.nav`
       margin: 10px 20px 0 0;
       font-size: 14px;
     `}
+
+    ${mq.maxWidth("xsm")`
+      font-size: 12px;
+      margin: 10px 15px 0 0;
+    `}
     }
 
     .active {
@@ -174,35 +179,70 @@ const Popup = styled.div`
       height: 640px;
     `}
 
+    ${mq.maxWidth("xsm")`
+      width: 300px;
+      height: 495px;
+    `}
+
+    
+
     .mainPopupContent {
       margin: 30px;
+
+      ${mq.maxWidth("xsm")`
+        margin: 30px;
+    `}
 
       h1 {
         font-size: 18px;
         padding-top: 50px;
         font-weight: 600;
         margin-left: 100px;
+
+        ${mq.maxWidth("xsm")`
+        font-size: 16px;
+        padding-top: 10px;
+        margin-left: 18px;
+    `}
       }
 
       h2 {
         font-size: 15px;
         font-weight: 500;
         margin: 50px 0 40px 0;
+
+        ${mq.maxWidth("xsm")`
+        font-size: 13px;
+        margin: 30px 0 25px 0;
+    `}
       }
 
       h3 {
         font-size: 14px;
         font-weight: 400;
         margin-top: 20px;
+
+        ${mq.maxWidth("xsm")`
+        font-size: 11px;
+        line-height: 13px;
+    `}
       }
 
       .checkBox {
         margin-top: 40px;
+
+        ${mq.maxWidth("xsm")`
+        margin-top: 30px;
+    `}
         label {
           display: flex;
 
           h3 {
             margin-left: 10px;
+            ${mq.maxWidth("xsm")`
+              margin:0;
+              margin-left: 10px;
+          `}
           }
         }
       }
@@ -219,6 +259,10 @@ const Popup = styled.div`
 
           ${mq.maxWidth("md")`
             width: 180px;
+          `}
+
+          ${mq.maxWidth("xsm")`
+              width: 100px;
           `}
 
           &:first-child {

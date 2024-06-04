@@ -182,7 +182,7 @@ const FaqAccount = memo(() => {
             </div>
             <div
               className="content"
-              style={{ height: dropdownStates.dropdown1 ? "120px" : "0" }}
+              style={{ height: dropdownStates.dropdown1 ? "200px" : "0" }}
             >
               <h5>
                 Once you sign up , you cannot change your ID. However, you can
@@ -211,7 +211,7 @@ const FaqAccount = memo(() => {
             </div>
             <div
               className="content"
-              style={{ height: dropdownStates.dropdown2 ? "100px" : "0" }}
+              style={{ height: dropdownStates.dropdown2 ? "120px" : "0" }}
             >
               <h5>
                 You may edit the personal information under {"["}Account &gt;
@@ -288,7 +288,7 @@ const FaqAccount = memo(() => {
             </div>
             <div
               className="content"
-              style={{ height: dropdownStates.dropdown5 ? "240px" : "0" }}
+              style={{ height: dropdownStates.dropdown5 ? "280px" : "0" }}
             >
               <h4>Member</h4>
               <h5>
@@ -379,7 +379,7 @@ const FaqAccount = memo(() => {
             </div>
             <div
               className="content"
-              style={{ height: dropdownStates.dropdown8 ? "80px" : "0" }}
+              style={{ height: dropdownStates.dropdown8 ? "130px" : "0" }}
             >
               <h5>
                 Shopping bags are not included when purchasing online. But we
@@ -430,7 +430,7 @@ const FaqAccount = memo(() => {
             </div>
             <div
               className="content"
-              style={{ height: dropdownStates.dropdown10 ? "80px" : "0" }}
+              style={{ height: dropdownStates.dropdown10 ? "150px" : "0" }}
             >
               <h5>
                 [Account &gt; View all &gt; Click a Product &gt; Cancel Order]
@@ -458,7 +458,7 @@ const FaqAccount = memo(() => {
             </div>
             <div
               className="content"
-              style={{ height: dropdownStates.dropdown11 ? "240px" : "0" }}
+              style={{ height: dropdownStates.dropdown11 ? "380px" : "0" }}
             >
               <h5>
                 When you place an online order, the sum total of your order is
@@ -524,7 +524,7 @@ const FaqAccount = memo(() => {
             </div>
             <div
               className="content"
-              style={{ height: dropdownStates.dropdown13 ? "80px" : "0" }}
+              style={{ height: dropdownStates.dropdown13 ? "130px" : "0" }}
             >
               <h5>
                 Cancellation is possible in Order details. It is not possible to
@@ -552,7 +552,7 @@ const FaqAccount = memo(() => {
             </div>
             <div
               className="content"
-              style={{ height: dropdownStates.dropdown14 ? "490px" : "0" }}
+              style={{ height: dropdownStates.dropdown14 ? "620px" : "0" }}
             >
               <h4>How to return</h4>
               <h5>
@@ -597,7 +597,7 @@ const FaqAccount = memo(() => {
             </div>
             <div
               className="content"
-              style={{ height: dropdownStates.dropdown15 ? "70px" : "0" }}
+              style={{ height: dropdownStates.dropdown15 ? "100px" : "0" }}
             >
               <h5>
                 There is no exchange system in the online store, please return
@@ -624,7 +624,7 @@ const FaqAccount = memo(() => {
             </div>
             <div
               className="content"
-              style={{ height: dropdownStates.dropdown16 ? "80px" : "0" }}
+              style={{ height: dropdownStates.dropdown16 ? "120px" : "0" }}
             >
               <h5>
                 You have to pay the shipping fee directly when you return it,

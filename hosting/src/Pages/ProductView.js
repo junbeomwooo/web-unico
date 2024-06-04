@@ -23,6 +23,7 @@ import { loginCheck } from "../slices/MemberSlice";
 
 const ProductContainer = styled.div`
   padding-top: 130px;
+  margin-bottom: 200px;
 
   .productBox {
     display: flex;
@@ -247,6 +248,10 @@ const CartContainer = styled.div`
   background-color: white;
   padding: 40px 20px;
 
+  ${mq.maxWidth("xsm")`
+      width: 215px;
+    `}
+
   .header {
     display: flex;
     justify-content: space-between;
@@ -259,6 +264,7 @@ const CartContainer = styled.div`
       border: none;
       background-color: white;
       font-size: 21.5px;
+      padding: 0;
       font-weight: 200;
 
       &:hover {
@@ -271,6 +277,12 @@ const CartContainer = styled.div`
     height: 640px;
     margin-top: 25px;
 
+    ${mq.maxWidth("xsm")`
+        height: 100%;
+    `}
+
+    
+
     .cartBox {
       display: flex;
       margin-top: 25px;
@@ -278,6 +290,11 @@ const CartContainer = styled.div`
       img {
         width: 105px;
         height: 105px;
+
+        ${mq.maxWidth("xsm")`
+        width: 65px;
+        height: 65px;
+    `}
       }
 
       .productInfo {
@@ -286,12 +303,27 @@ const CartContainer = styled.div`
           margin: 0;
           font-size: 13.5px;
           padding-bottom: 5px;
+
+          ${mq.maxWidth("xsm")`
+         font-size: 12.5px;
+         width: 100px;
+         padding-bottom: 3px;
+    `}
         }
 
+        .duty {
+          ${mq.maxWidth("xsm")`
+          display:none;
+    `}
+        }
         h5 {
           margin: 0;
           padding-top: 8px;
           font-size: 10.5px;
+
+          ${mq.maxWidth("xsm")`
+         font-size: 9.5px;
+    `}
         }
 
         .pdbuttons {
@@ -300,12 +332,16 @@ const CartContainer = styled.div`
           border: 1px solid black;
           width: 75px;
           height: 22px;
+          ${mq.maxWidth("xsm")`
+          width: 60px;
+          height: 16px;
+          margin-top: 6px;
+    `}
 
           button {
             width: 25px;
             border: none;
             background-color: white;
-
             &:hover {
               cursor: pointer;
             }
@@ -317,6 +353,11 @@ const CartContainer = styled.div`
             width: 25px;
             display: block;
             text-align: center;
+
+            ${mq.maxWidth("xsm")`
+
+          margin-top: 3px;
+    `}
           }
         }
       }
@@ -329,6 +370,11 @@ const CartContainer = styled.div`
           margin-top: 85px;
           text-decoration: underline;
 
+          ${mq.maxWidth("xsm")`
+          margin-top: 50px;
+          margin-left: -15px;
+    `}
+
           &:hover {
             cursor: pointer;
           }
@@ -339,6 +385,10 @@ const CartContainer = styled.div`
     hr {
       border: 0.5px solid #e0e0e0;
       margin-top: 25px;
+
+      ${mq.maxWidth("xsm")`
+         margin-top: 10px;
+    `}
     }
   }
 
@@ -351,11 +401,19 @@ const CartContainer = styled.div`
       h2 {
         font-size: 14px;
         font-weight: 500;
+
+        ${mq.maxWidth("xsm")`
+        font-size: 11.5px;
+    `}
       }
 
       h3 {
         font-size: 14px;
         font-weight: 400;
+
+        ${mq.maxWidth("xsm")`
+        font-size: 11.5px;
+    `}
       }
     }
   }
@@ -368,6 +426,10 @@ const CartContainer = styled.div`
       color: white;
       background-color: black;
       height: 38px;
+
+      ${mq.maxWidth("xsm")`
+        height: 30px;
+    `}
 
       &:nth-child(2) {
         background-color: white;
@@ -818,10 +880,7 @@ const ProductView = memo(() => {
                             <div key={i}>
                               <div className="cartBox" key={i}>
                                 <Link to={`/product/${v.prodno}`}>
-                                  <img
-                                    src={v.img1}
-                                    alt={v.title}
-                                  />
+                                  <img src={v.img1} alt={v.title} />
                                 </Link>
                                 <div className="productInfo">
                                   <h4>{v.title}</h4>
@@ -922,15 +981,12 @@ const ProductView = memo(() => {
                             <div key={i}>
                               <div className="cartBox" key={i}>
                                 <Link to={`/product/${v.prodno}`}>
-                                  <img
-                                    src={v.img1}
-                                    alt={v.title}
-                                  />
+                                  <img src={v.img1} alt={v.title} />
                                 </Link>
                                 <div className="productInfo">
                                   <h4>{v.title}</h4>
                                   <h5>${v.price}</h5>
-                                  <h5>Duty not included</h5>
+                                  <h5 className="duty">Duty not included</h5>
 
                                   <div className="pdbuttons">
                                     <button

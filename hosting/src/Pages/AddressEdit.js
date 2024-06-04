@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginCheck, putMyInfo } from "../slices/MemberSlice";
 import regexHelper from "../helper/RegexHelper";
 import Spinner from '../components/Spinner';
+import mq from '../MediaQuery/MediaQuery';
 
 const Container = styled.form`
   padding-top: 100px;
@@ -17,6 +18,10 @@ const Container = styled.form`
     margin-top: 150px;
     width: 450px;
     height: auto;
+
+    ${mq.maxWidth("xsm")`
+      width: 300px;
+    `}
 
     h1 {
       font-size: 18px;
@@ -191,6 +196,10 @@ const Container = styled.form`
         background: none;
         box-sizing: border-box;
         position: relative;
+        
+        ${mq.maxWidth("xsm")`
+      width: 312px;
+    `}
 
         span {
           font-size: 15px;
@@ -241,6 +250,10 @@ const Container = styled.form`
       width: 462px;
       margin-top: 20px;
       margin-bottom: 100px;
+
+      ${mq.maxWidth("xsm")`
+      width: 300px;
+    `}
 
       button {
         width: 46%;

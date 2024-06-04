@@ -61,6 +61,10 @@ const Box = styled.form`
         width:86%;
     `}
 
+${mq.maxWidth("xsm")`
+        width: 300px;
+    `}
+
   h2 {
     font-size: 18px;
   }
@@ -98,6 +102,11 @@ const Box = styled.form`
     border: 1px solid black;
     background-color: black;
     color: white;
+
+
+    ${mq.maxWidth("xsm")`
+        width: 312px;
+    `}
 
     &:hover {
       cursor: pointer;

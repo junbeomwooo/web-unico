@@ -5,6 +5,7 @@ import { getList } from "../../slices/SubCategorySlice";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
+import mq from '../../MediaQuery/MediaQuery';
 
 import Spinner from "../../components/Spinner";
 import ErrorView from "../../components/ErrorView";
@@ -12,20 +13,34 @@ import noimage from "../../assets/buttons/noimage.png";
 import regexHelper from "../../helper/RegexHelper";
 
 const Container = styled.form`
-  padding: 30px 50px;
+  padding: 30px 0px;
   box-sizing: border-box;
   width: 85%;
-  height: 1400px;
+  height: 1500px;
+  margin-left: 250px;
+
+  ${mq.maxWidth("md")`
+      margin-left: 0;
+      width:100%;
+    `}
 
   hr {
     border: 0.5px solid #212b34;
     margin-top: 20px;
+
+    ${mq.maxWidth("md")`
+      margin-bottom: 100px;
+    `}
   }
 
   .header {
     display: flex;
     justify-content: center;
     margin: 10px 0;
+
+    ${mq.maxWidth("md")`
+      display:none;
+    `}
     h1 {
       font-size: 28px;
       font-weight: 700;
@@ -47,6 +62,12 @@ const Container = styled.form`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    ${mq.maxWidth("xxl")`
+      margin: 0;
+      width: 80%;
+      margin: auto;
+    `}
 
     .cateContainer {
       border: 1px solid #4f4f4f;
@@ -103,6 +124,12 @@ const Container = styled.form`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    ${mq.maxWidth("xxl")`
+      margin: 0;
+      width: 80%;
+      margin: auto;
+    `}
   }
 
   .price {
@@ -110,6 +137,11 @@ const Container = styled.form`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    ${mq.maxWidth("xxl")`
+      margin: 0;
+      width: 80%;
+      margin: auto;
+    `}
   }
 
   .content {
@@ -117,6 +149,11 @@ const Container = styled.form`
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    ${mq.maxWidth("xxl")`
+      margin: 0;
+      width: 80%;
+      margin: auto;
+    `}
 
     textarea {
       width: 400px;
@@ -129,6 +166,11 @@ const Container = styled.form`
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    ${mq.maxWidth("xxl")`
+      margin: 0;
+      width: 80%;
+      margin: auto;
+    `}
 
     textarea {
       width: 400px;
@@ -141,6 +183,11 @@ const Container = styled.form`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    ${mq.maxWidth("xxl")`
+      margin: 0;
+      width: 80%;
+      margin: auto;
+    `}
 
     .isSellContainer {
       border: 1px solid #4f4f4f;
@@ -198,12 +245,28 @@ const Container = styled.form`
     justify-content: space-between;
     margin: 100px 28% 0 28%;
 
+    ${mq.maxWidth("xxl")`
+      margin: 0;
+      width: 80%;
+      margin: auto;
+      margin-top: 60px;
+    `}
+
+
     button {
-      width: 250px;
+      width: 200px;
       height: 45px;
       border: 1px solid black;
       background-color: black;
       color: white;
+
+      ${mq.maxWidth("xl")`
+      width: 170px;
+    `}
+
+${mq.maxWidth("sm")`
+      width: 140px;
+    `}
 
       &:first-child {
         background-color: white;
@@ -217,8 +280,21 @@ const Container = styled.form`
   }
   .images {
     margin: 0 28% 0 28%;
+
+    ${mq.maxWidth("xxl")`
+      margin: 0;
+      width: 80%;
+      margin: auto;
+    `}
+
     .imageContainer {
       margin-left: 16%;
+
+      ${mq.maxWidth("xxl")`
+      margin: 0;
+      width: 80%;
+      margin: auto;
+    `}
 
       .button {
         display: flex;
@@ -235,6 +311,10 @@ const Container = styled.form`
           width: 125px;
           margin-left: 15px;
           margin-bottom: 15px;
+
+          ${mq.maxWidth("xxl")`
+          width: 80px;
+    `}
         }
       }
     }

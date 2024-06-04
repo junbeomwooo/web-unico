@@ -6,16 +6,112 @@ import { orderGetList } from "../../slices/OrderDetailSlice";
 import { useQueryString } from "../../hooks/useQueryString";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import Table from "../../components/Table";
 import Pagenation from "../../helper/Pagenation";
 import Spinner from "../../components/Spinner";
 import ErrorView from "../../components/ErrorView";
+import mq from "../../MediaQuery/MediaQuery";
 
 const Container = styled.div`
-  padding: 30px 50px;
+  padding: 30px 40px;
   box-sizing: border-box;
   width: 85%;
-  height: 1500px;
+  height: 1700px;
+  margin-left: 250px;
+
+  ${mq.maxWidth("md")`
+      width: 100%;
+      margin-top: 100px;
+      margin-left: 0px;
+    `}
+
+  .table {
+    border-collapse: collapse;
+    border-top: 3px solid #168;
+    font-size: 14px;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+
+    ${mq.maxWidth("xl")`
+      font-size: 10px;
+    `}
+
+    ${mq.maxWidth("lg")`
+      font-size: 8px;
+    `}
+
+    ${mq.maxWidth("md")`
+      display:none;
+    `}
+
+    th {
+      color: #168;
+      background: #f0f6f9;
+      padding: 10px;
+      border: 1px solid #ddd;
+
+      &:first-child {
+        border-left: 0;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+
+    td {
+      padding: 10px;
+      border: 1px solid #ddd;
+
+      &:first-child {
+        border-left: 0;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+  .mobileTable {
+    border-collapse: collapse;
+    border-top: 3px solid #168;
+    font-size: 9px;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+
+    ${mq.minWidth("md")`
+      display:none;
+    `}
+
+    th {
+      color: #168;
+      background: #f0f6f9;
+      padding: 5px;
+      border: 1px solid #ddd;
+
+      &:first-child {
+        border-left: 0;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+
+    td {
+      padding: 5px;
+      border: 1px solid #ddd;
+
+      &:first-child {
+        border-left: 0;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
 
   hr {
     border: 0.5px solid #212b34;
@@ -31,6 +127,10 @@ const Container = styled.div`
       font-size: 28px;
       font-weight: 700;
       color: #212b34;
+
+      ${mq.maxWidth("md")`
+      display:none;
+    `}
     }
   }
   .memberCount {
@@ -283,7 +383,7 @@ const AdminMember = memo(() => {
             </div>
           </form>
           {/** 테이블 */}
-          <Table>
+          <table className="table">
             <thead>
               <tr>
                 <th>UserNo</th>
@@ -302,14 +402,14 @@ const AdminMember = memo(() => {
               {data?.length > 0 ? (
                 data.map((v) => {
                   return (
-                    <tr key={v.userno} onClick={() => navigate(`/admin/member/${v.userno}`)} style={{ cursor: 'pointer'}}>
+                    <tr
+                      key={v.userno}
+                      onClick={() => navigate(`/admin/member/${v.userno}`)}
+                      style={{ cursor: "pointer" }}
+                    >
                       <td>{v.userno}</td>
-                      <td>
-                          {v.account}
-                      </td>
-                      <td>
-                          {v.name}
-                      </td>
+                      <td>{v.account}</td>
+                      <td>{v.name}</td>
                       <td>
                         {v.gender === "M"
                           ? "Male"
@@ -334,7 +434,52 @@ const AdminMember = memo(() => {
                 </tr>
               )}
             </tbody>
-          </Table>
+          </table>
+          {/** 모바일 전용 테이블 */}
+          <table className="mobileTable">
+            <thead>
+              <tr>
+                <th>UserNo</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Total Payment</th>
+                <th>Registration Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data?.length > 0 ? (
+                data.map((v) => {
+                  return (
+                    <tr
+                      key={v.userno}
+                      onClick={() => navigate(`/admin/member/${v.userno}`)}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <td>{v.userno}</td>
+                      <td>{v.account}</td>
+                      <td>{v.name}</td>
+                      <td>
+                        {v.gender === "M"
+                          ? "Male"
+                          : v.gender === "F"
+                          ? "Female"
+                          : "Others"}
+                      </td>
+                      <td>${v.total_payment ? v.total_payment : "0"}</td>
+                      <td>{v.reg_date.substring(2, 10)}</td>
+                    </tr>
+                  );
+                })
+              ) : (
+                <tr>
+                  <td colSpan="10" align="center">
+                    There is no result.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
           {data?.length > 0 && <Pagenation pagenation={pagenation} />}
         </Container>
       )}

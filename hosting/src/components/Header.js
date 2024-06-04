@@ -199,7 +199,12 @@ const MenuContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    /* 가장 작은 사이즈 일때 */
+    ${mq.maxWidth('xsm')`
+        width: 250px;
+    `}
 
+    /* md 사이즈 이상일 경우 */
     ${mq.minWidth('md')`
         display:none;
     `}
@@ -228,6 +233,10 @@ const MenuContainer = styled.div`
         align-items: flex-start;
         width: 300px;
 
+        ${mq.maxWidth('xsm')`
+            width: 220px;
+        `}
+
         input {
             width: 270px;
             margin: 120px 150px 0px 0;
@@ -236,6 +245,11 @@ const MenuContainer = styled.div`
             border-radius: 80px;
             padding: 0 15px;
             font-size: 19px;
+            background-color: white;
+
+            ${mq.maxWidth('xsm')`
+                width: 190px;
+            `}
         }
         button{
             font-size: 20px;

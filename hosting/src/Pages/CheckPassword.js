@@ -93,6 +93,11 @@ const Navigator = styled.nav`
       margin: 10px 20px 0 0;
       font-size: 14px;
     `}
+
+${mq.maxWidth("xsm")`
+      font-size: 12px;
+      margin: 10px 15px 0 0;
+    `}
     }
 
     .active {

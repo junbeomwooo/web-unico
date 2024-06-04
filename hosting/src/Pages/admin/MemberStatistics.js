@@ -6,6 +6,7 @@ import styled from "styled-components";
 
 import Spinner from "../../components/Spinner";
 import ErrorView from "../../components/ErrorView";
+import mq from '../../MediaQuery/MediaQuery';
 
 /** 그래프 전용 */
 import { cloneDeep } from "lodash";
@@ -43,10 +44,30 @@ const Container = styled.div`
   box-sizing: border-box;
   width: 85%;
   height: 1350px;
+  margin-left: 250px;
+
+  ${mq.maxWidth("md")`
+      wdith: 100%
+      margin-left: 0;
+      margin:auto;
+      margin-bottom: 150px;
+    `}
+
+${mq.maxWidth("xl")`
+      width: 75%;
+    `}
+
+${mq.maxWidth("md")`
+      width: 100%;
+    `}
 
   hr {
     border: 0.5px solid #212b34;
     margin-top: 20px;
+
+    ${mq.maxWidth("md")`
+      margin-bottom: 120px;
+    `}
   }
 
   .header {
@@ -58,21 +79,44 @@ const Container = styled.div`
       font-weight: 700;
       color: #212b34;
     }
+
+    ${mq.maxWidth("md")`
+      display:none;
+    `}
   }
 
   .pieGraph {
     display: flex;
     justify-content: space-between;
     margin-top: 80px;
+    width: 100%;
+    
+
+    ${mq.maxWidth("xl")`
+          width: 100%;
+      `}
+
 
     .memberGraph {
       width: 50%;
       height: 400px;
 
+      ${mq.maxWidth("xl")`
+          width: 38%;
+      `}
+
       h1 {
         font-size: 17px;
         text-align: center;
         margin-bottom: 40px;
+
+        ${mq.maxWidth("md")`
+        font-size: 15px;
+        margin-bottom: 0px;
+
+      `}
+
+        
       }
     }
 
@@ -80,10 +124,20 @@ const Container = styled.div`
       width: 50%;
       height: 400px;
 
+      ${mq.maxWidth("xl")`
+          width: 38%;
+      `}
+
       h1 {
         font-size: 17px;
         text-align: center;
         margin-bottom: 40px;
+
+        ${mq.maxWidth("md")`
+        font-size: 15px;
+        margin-bottom: 0px;
+
+      `}
       }
     }
   }

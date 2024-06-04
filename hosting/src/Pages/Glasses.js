@@ -44,10 +44,12 @@ const Box = styled.div`
       }
     }
   }
-  .sort {
-    position: absolute;
-    right: 6%;
-    top: 45%;
+  .sortContainer {
+    display: flex;
+    justify-content: right;
+    margin-right: 6%;
+    margin-top: 50px;
+    .sort {
     display: flex;
     flex-direction: column;
     height: ${({ sortopen }) => (sortopen === "true" ? "165px" : "20px")};
@@ -56,10 +58,6 @@ const Box = styled.div`
     background-color: #f4f3f2;
     transition: height 0.25s ease-in-out; // 트랜지션 효과 추가
 
-    ${mq.maxWidth("md")`
-        width: 80px;
-    `}
-
     button {
       border: none;
       font-weight: 500;
@@ -67,21 +65,18 @@ const Box = styled.div`
       margin-bottom: 15px;
       height: 20px;
 
-      ${mq.maxWidth("md")`
-        font-size: 12.5px;
-    `}
-
       &:hover {
         cursor: pointer;
       }
     }
+  }
   }
   .productContainer {
     .productBox {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      margin: 130px 0 130px 0;
+      margin: 50px 0 130px 0;
 
       div {
         width: 21%;
@@ -216,7 +211,7 @@ const Glasses = memo(() => {
     [setSortOpen, sortOpen]
   );
 
- /** 정렬 기준 */
+  /** 정렬 기준 */
   // 최신 순
   const onClickNewest = useCallback(
     (e) => {
@@ -296,24 +291,26 @@ const Glasses = memo(() => {
                 <h4>Glasses</h4>
               </div>
             </div>
-            <div className="sort">
-              <button onClick={onClickFilter}>Sort</button>
-              {sortOpen === true && (
-                <>
-                  <button onClick={onClickNewest} className="openButton">
-                    Newest
-                  </button>
-                  <button onClick={onClickOldest} className="openButton">
-                    Oldest
-                  </button>
-                  <button onClick={onClickLowest} className="openButton">
-                    Lowest Price
-                  </button>
-                  <button onClick={onClickHighest} className="openButton">
-                    Highest Price
-                  </button>
-                </>
-              )}
+            <div className="sortContainer">
+              <div className="sort">
+                <button onClick={onClickFilter}>Sort</button>
+                {sortOpen === true && (
+                  <>
+                    <button onClick={onClickNewest} className="openButton">
+                      Newest
+                    </button>
+                    <button onClick={onClickOldest} className="openButton">
+                      Oldest
+                    </button>
+                    <button onClick={onClickLowest} className="openButton">
+                      Lowest Price
+                    </button>
+                    <button onClick={onClickHighest} className="openButton">
+                      Highest Price
+                    </button>
+                  </>
+                )}
+              </div>
             </div>
 
             <div className="productContainer">
@@ -325,10 +322,7 @@ const Glasses = memo(() => {
                       return (
                         <div key={i}>
                           <NavLink to={`/product/${v.prodno}`}>
-                            <img
-                              src={v.img1}
-                              alt={v.title}
-                            />
+                            <img src={v.img1} alt={v.title} />
                           </NavLink>
                           <NavLink
                             to={`/product/${v.prodno}`}

@@ -48,6 +48,7 @@ const Box = styled.div`
   transform: translate(-50%, -50%);
   width: 800px;
   height: 351.73px;
+  padding-bottom: 200px;
 
   ${mq.maxWidth("xl")`
     width: 600px;
@@ -67,6 +68,7 @@ ${mq.maxWidth("lg")`
         width:86%;
         margin-bottom: 300px;
     `}
+    
   hr {
     border: 0.5px solid #E0E0E0;
     margin: 30px 0;

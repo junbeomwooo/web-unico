@@ -27,6 +27,12 @@ const NonLogin = styled.div`
     margin-top: 150px;
     width: 450px;
     height: auto;
+
+    ${mq.maxWidth("sm")`
+      width: 300px;
+    `}
+
+    
     h1 {
       font-size: 18px;
       font-weight: 600;
@@ -76,6 +82,10 @@ const NonLogin = styled.div`
     width: 450px;
     height: auto;
     margin-top: 60px;
+
+    ${mq.maxWidth("sm")`
+      width: 300px;
+    `}
     h1 {
       font-size: 18px;
       font-weight: 600;
@@ -93,6 +103,10 @@ const NonLogin = styled.div`
     height: auto;
     margin-top: 50px;
     margin-bottom: 200px;
+
+    ${mq.maxWidth("sm")`
+      width: 300px;
+    `}
 
     h1 {
       font-size: 18px;
@@ -117,6 +131,10 @@ const ButtonLink = styled(Link)`
     border: 1px solid black;
     margin-top: 20px;
     transition: background-color 0.4s ease;
+
+    ${mq.maxWidth("sm")`
+      width: 300px;
+    `}
 
     &:hover {
       cursor: pointer;
@@ -204,6 +222,10 @@ const DuringLogin = styled.div`
       img {
         width: 120px;
         height: auto;
+
+        ${mq.maxWidth("xsm")`
+        width: 80px;
+    `}
       }
 
       .productInfo {
@@ -215,18 +237,30 @@ const DuringLogin = styled.div`
         h2 {
           font-size: 15px;
           margin: 0;
+
+          ${mq.maxWidth("xsm")`
+          font-size: 14px;
+    `}
         }
 
         h4 {
           font-weight: 400;
           font-size: 15px;
           margin: 0;
+          ${mq.maxWidth("xsm")`
+          font-size: 14px;
+    `}
+          
         }
 
         h6 {
           font-size: 13px;
           font-weight: 400;
           margin: 0;
+
+          ${mq.maxWidth("xsm")`
+          font-size: 12px;
+    `}
         }
       }
     }
@@ -285,9 +319,18 @@ const FindPasswordPopup = styled.div`
       height: 460px;
     `}
 
+    ${mq.maxWidth("sm")`
+      width: 300px;
+      height: 390px
+    `}
+
     .mainPopupContent {
       margin: 80px;
       margin-top: 0px;
+
+      ${mq.maxWidth("sm")`
+        margin: 30px;
+    `}
       .titleFlex {
         display: flex;
         justify-content: space-between;
@@ -296,6 +339,11 @@ const FindPasswordPopup = styled.div`
           padding-top: 80px;
           font-size: 16px;
           font-weight: 700;
+
+          ${mq.maxWidth("sm")`
+          font-size: 15px;
+          padding-top: 30px;
+    `}
         }
       }
 
@@ -304,12 +352,19 @@ const FindPasswordPopup = styled.div`
         font-size: 15px;
         font-weight: 400;
         line-height: 30px;
+        ${mq.maxWidth("sm")`
+        font-size: 14px;
+    `}
       }
 
       .buttons {
         display: flex;
         justify-content: space-between;
         margin-top: 60px;
+
+        ${mq.maxWidth("sm")`
+        margin-top: 30px;
+    `}
         button {
           height: 40px;
           width: 45%;
@@ -348,15 +403,20 @@ const AdminPopup = styled.div`
     left: 50%; /* 가로 중앙 */
     transform: translate(-50%, -50%); /* 중앙으로부터 자신의 크기만큼 이동 */
 
-    ${mq.maxWidth("md")`
-      width: 450px;
-      height: 500px;
+    ${mq.maxWidth("sm")`
+      width: 300px;
+      height: 430px;
     `}
 
     .mainPopupContent {
       text-align: center;
       margin: 40px;
       margin-top: 0px;
+
+      ${mq.maxWidth("sm")`
+      margin: 30px;
+      `}
+
       .titleFlex {
         margin-bottom: 40px;
         .cross-box {
@@ -366,14 +426,22 @@ const AdminPopup = styled.div`
           cursor: pointer;
           margin-left: 380px;
 
-          ${mq.maxWidth("md")`
-            margin-left: 360px;
-          `}
+          ${mq.maxWidth("sm")`
+          margin-left:230px;
+          font-size: 23px;
+          margin-top: -10px;
+      `}
         }
         h1 {
           padding-top: 110px;
           font-size: 16px;
           font-weight: 700;
+
+          ${mq.maxWidth("sm")`
+          font-size: 15px;
+          padding-top: 60px;
+          line-height: 0px;
+      `}
         }
       }
 
@@ -382,11 +450,20 @@ const AdminPopup = styled.div`
         font-size: 15px;
         font-weight: 400;
         line-height: 30px;
+
+        ${mq.maxWidth("sm")`
+         font-size: 14px;
+         line-height: 25px;
+      `}
       }
 
       .checkBox {
         position: absolute;
         margin-top: 80px;
+
+        ${mq.maxWidth("sm")`
+          margin-top: 30px;
+      `}
 
         input {
           margin-right: 10px;
@@ -394,6 +471,10 @@ const AdminPopup = styled.div`
 
         label {
           font-size: 15px;
+
+          ${mq.maxWidth("sm")`
+          font-size: 14px;
+      `}
         }
       }
     }
@@ -535,7 +616,7 @@ const Login = memo(() => {
     // '오늘하루보지않기'를 선택하지 않았을 경우
     if (!turnOffForDay) {
       setAdminPopup(false);
-      
+
       // '오늘하루보지않기'를 선택하고 닫은 경우
     } else if (turnOffForDay) {
       const date = new Date();

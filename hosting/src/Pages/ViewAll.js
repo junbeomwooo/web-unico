@@ -68,7 +68,7 @@ const Box = styled.div`
   .sort {
     position: absolute;
     right: 7%;
-    top: 32.8%;
+    margin-top:-2px;
     display: flex;
     flex-direction: column;
     height: ${({ sortopen }) => (sortopen === "true" ? "165px" : "20px")};
@@ -79,6 +79,12 @@ const Box = styled.div`
 
     ${mq.maxWidth("md")`
         width: 80px;
+        margin-top: -20px;
+    `}
+
+${mq.maxWidth("xsm")`
+        margin-top: 25px;
+        width: 60px;
     `}
 
     button {
@@ -90,6 +96,10 @@ const Box = styled.div`
 
       ${mq.maxWidth("md")`
         font-size: 12.5px;
+    `}
+
+${mq.maxWidth("xsm")`
+          font-size: 11px;
     `}
 
       &:hover {
@@ -128,6 +138,11 @@ const Box = styled.div`
       margin: 10px 15px 0 0;
       font-size: 13px;
     `}
+
+${mq.maxWidth("xsm")`
+      font-size: 12px;
+      margin: 10px 15px 0 0;
+    `}
       }
 
       .active {
@@ -156,6 +171,11 @@ const Box = styled.div`
       margin-top: 20px;
       width: 85%;
     `}
+
+${mq.maxWidth("xsm")`
+      margin-top: 40px;
+    `}
+    
     hr {
       margin: 40px 0;
       opacity: 30%;

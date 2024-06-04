@@ -21,6 +21,10 @@ const Container = styled.form`
   margin: auto;
   margin-bottom: 200px;
 
+  ${mq.maxWidth("xsm")`
+       width: 300px;
+    `}
+
   .payment {
     h1 {
       font-size: 16.5px;
@@ -105,9 +109,19 @@ const Container = styled.form`
         width: 400px;
         display: flex;
 
+        ${mq.maxWidth("xsm")`
+       width: 300px;
+    `}
+
         h4 {
           font-size: 14px;
           width: 372px;
+
+          ${mq.maxWidth("xsm")`
+       width: 272px;
+       margin:0;
+       font-size: 12px;
+    `}
         }
 
         input {
@@ -126,6 +140,10 @@ const Container = styled.form`
         border: none;
         background-color: black;
         color: white;
+
+        ${mq.maxWidth("xsm")`
+       width: 140px;
+    `}
 
         &:first-child {
           background-color: white;
@@ -153,6 +171,10 @@ const ProductContainer = styled.div`
     margin-top: -150px;
     margin-bottom: 150px;
   `}
+
+${mq.maxWidth("xsm")`
+       width: 300px;
+    `}
 
   .container {
     hr {
@@ -391,7 +413,7 @@ const Payment = memo(() => {
           })
         ).then((response) => {
           if (response.payload.rtcode === 200) {
-            navigate("/confirm_payment")
+            navigate("/confirm_payment");
           }
         });
       }
@@ -507,10 +529,7 @@ const Payment = memo(() => {
 
                     return (
                       <div className="productBox" key={i}>
-                        <img
-                          src={v.img1}
-                          alt={v.title}
-                        />
+                        <img src={v.img1} alt={v.title} />
                         <div className="productInfo">
                           <div className="nameAndPrice">
                             <h2>{v.title}</h2>
@@ -668,10 +687,7 @@ const Payment = memo(() => {
 
                     return (
                       <div className="productBox" key={i}>
-                        <img
-                          src={v.img1}
-                          alt={v.title}
-                        />
+                        <img src={v.img1} alt={v.title} />
                         <div className="productInfo">
                           <div className="nameAndPrice">
                             <h2>{v.title}</h2>

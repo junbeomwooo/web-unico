@@ -17,10 +17,14 @@ const ProductContainer = styled.div`
   padding-top: 180px;
   padding-bottom: 40px;
   ${mq.maxWidth("xxxl")`
-
     margin: auto;
     width: 450px;
   `}
+
+${mq.maxWidth("xsm")`
+    width: 300px;
+    margin: auto;
+    `}
 
   .container {
     hr {
@@ -138,6 +142,10 @@ const Container = styled.div`
   width: 450px;
   margin: auto;
   margin-bottom: 200px;
+
+  ${mq.maxWidth("xsm")`
+        width: 300px;
+    `}
 
   hr {
     margin: 50px 0;

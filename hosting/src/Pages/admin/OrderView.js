@@ -6,12 +6,23 @@ import { useDispatch, useSelector } from "react-redux";
 import { getItemParams } from "../../slices/OrderDetailSlice";
 import { guestGetItemParams } from "../../slices/GuestOrderDetailSlice";
 import ErrorView from "../../components/ErrorView";
+import mq from '../../MediaQuery/MediaQuery';
 
 const Container = styled.div`
   padding: 30px 50px;
   box-sizing: border-box;
   width: 85%;
   height: 1200px;
+  margin-left: 250px;
+  
+  ${mq.maxWidth("xl")`
+  height: 1600px;
+    `}
+
+  ${mq.maxWidth("md")`
+
+      margin:auto;
+    `}
 
   hr {
     border: 0.5px solid #212b34;
@@ -22,6 +33,10 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     margin: 10px 0;
+
+    ${mq.maxWidth("md")`
+      display:none;
+    `}
     h1 {
       font-size: 28px;
       font-weight: 700;
@@ -31,11 +46,29 @@ const Container = styled.div`
   .box {
     display: flex;
     justify-content: space-between;
+    
+    ${mq.maxWidth("xl")`
+
+    display: block;
+    `}
     .order {
       width: 50%;
       margin-top: 80px;
       margin-left: 80px;
       margin-right: 40px;
+
+
+  ${mq.maxWidth("xl")`
+  width: 80%;
+  margin: auto;
+  margin-top: 80px;
+    `}
+
+${mq.maxWidth("md")`
+    width: 100%;
+    margin: auto;
+    margin-top: 80px;
+    `}
 
       h4 {
         font-size: 14px;
@@ -115,6 +148,18 @@ const Container = styled.div`
       margin-top: 80px;
       margin-right: 40px;
       margin-left: 40px;
+
+      ${mq.maxWidth("xl")`
+  width: 80%;
+  margin: auto;
+  margin-top: 80px;
+    `}
+
+${mq.maxWidth("md")`
+    width: 100%;
+    margin: auto;
+    margin-top: 80px;
+    `}
 
       .container {
         hr {
@@ -233,12 +278,22 @@ const Container = styled.div`
     margin-top: 100px;
     margin-left: 33.5%;
 
+    ${mq.maxWidth("xl")`
+  width: 100%;
+  margin: auto;
+  margin-top: 80px;
+    `}
+
     button {
       width: 450px;
       height: 45px;
       border: 1px solid black;
       background-color: black;
       color: white;
+
+      ${mq.maxWidth("xl")`
+  width: 100%;
+    `}
 
       &:hover {
         cursor: pointer;

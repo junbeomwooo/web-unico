@@ -25,8 +25,8 @@ import {
 } from "chart.js";
 import { Spinner } from "react-bootstrap";
 import ErrorView from "../../components/ErrorView";
-
 import { Bar, Line, Pie } from "react-chartjs-2";
+import mq from '../../MediaQuery/MediaQuery';
 
 Chart.register(
   // 공통항목들
@@ -52,8 +52,17 @@ const Box = styled.div`
   box-sizing: border-box;
   width: 80%;
   height: 1100px;
+  margin-left: 250px;
+  
+  ${mq.maxWidth("md")`
+      margin: auto;
+      margin-top: 150px;
+      width: 100%;
+      margin-bottom: 600px;
+    `}
+
   .bar {
-    width: 107%;
+    width: 100%;
     height: 40%;
 
     .title {
@@ -75,26 +84,49 @@ const Box = styled.div`
   }
   .smallBox {
     margin-top: 80px;
-    width: 107%;
+    width: 100%;
     height: 50%;
     display: flex;
 
+    ${mq.maxWidth("md")`
+      display: block;
+    `}
+
     .pieBox {
-      width: 60%;
+      width: 50%;
       height: 60%;
+
+      ${mq.maxWidth("md")`
+      width: 100%;
+      margin-top: 200px;
+    `}
+
       .title {
         margin-bottom: 50px;
+
+        ${mq.maxWidth("md")`
+      margin: 50px;
+    `}
       }
 
       .pie {
         margin-left: 70px;
         height: 120%;
+
+        ${mq.maxWidth("md")`
+        margin-left: 0px;
+    `}
       }
     }
 
     .lineBox {
-      width: 80%;
+      width: 50%;
       height: 65%;
+      
+      ${mq.maxWidth("md")`
+      width: 100%;
+      margin-top: 200px;
+    `}
 
       .title {
         margin-bottom: 50px;
@@ -138,7 +170,7 @@ const Admin = memo(() => {
   const [monthlyOrderCounts, setMonthlyOrderCounts] = useState({});
 
   // 연도값을 설정할 상태값
-  const [selectedYear, setSelectedYear] = useState(2023); // 선택된 연도를 상태로 관리
+  const [selectedYear, setSelectedYear] = useState(2024); // 선택된 연도를 상태로 관리
 
   // 선택 가능한 연도 목록
   const yearOptions = [2023, 2024];

@@ -4,12 +4,12 @@ import styled from "styled-components";
 
 import Spinner from "../../components/Spinner";
 import ErrorView from "../../components/ErrorView";
-import Table from "../../components/Table";
 import Pagenation from "../../helper/Pagenation";
 import { useQueryString } from "../../hooks/useQueryString";
 import { useLocation, useNavigate } from "react-router-dom";
 import { deleteItem } from "../../slices/ProductSlice";
 import axios from "axios";
+import mq from "../../MediaQuery/MediaQuery";
 
 import { getListwithPage } from "../../slices/ProductSlice";
 
@@ -18,6 +18,18 @@ const Container = styled.div`
   box-sizing: border-box;
   width: 85%;
   height: 1600px;
+  margin-left: 250px;
+
+  ${mq.maxWidth("md")`
+        height: 1200px;
+      `}
+
+  ${mq.maxWidth("md")`
+    margin-left:0;
+    margin:auto;
+    margin-top: 100px;
+    padding: 30px 0px;
+      `}
   hr {
     border: 0.5px solid #212b34;
     margin-top: 20px;
@@ -27,6 +39,10 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     margin: 10px 0;
+
+    ${mq.maxWidth("md")`
+        display:none;
+      `}
     h1 {
       font-size: 28px;
       font-weight: 700;
@@ -98,6 +114,10 @@ const Container = styled.div`
         margin: 10px 0;
         display: flex;
         justify-content: center;
+
+        ${mq.maxWidth("md")`
+          margin-bottom: 50px;
+      `}
         button {
           margin: 0 5px;
         }
@@ -106,6 +126,133 @@ const Container = styled.div`
       .addProduct {
         position: absolute;
         right: 57px;
+
+        ${mq.maxWidth("md")`
+          right: 6%;
+      `}
+      }
+    }
+  }
+
+  .product {
+    .table {
+      border-collapse: collapse;
+      border-top: 3px solid #168;
+      font-size: 14px;
+      text-align: center;
+      margin: auto;
+      width: 100%;
+      margin-top: 25px;
+
+      ${mq.maxWidth("xl")`
+      font-size: 12px;
+      `}
+
+      ${mq.maxWidth("lg")`
+      display:none
+      `}
+
+      th {
+        color: #168;
+        background: #f0f6f9;
+        padding: 10px;
+        border: 1px solid #ddd;
+
+        ${mq.maxWidth("xl")`
+        padding: 5px;
+      `}
+
+        &:first-child {
+          border-left: 0;
+        }
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+
+      td {
+        padding: 10px;
+        border: 1px solid #ddd;
+
+        ${mq.maxWidth("xl")`
+        padding: 5px;
+      `}
+
+        &:first-child {
+          border-left: 0;
+        }
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+
+    .mobileTable {
+      border-collapse: collapse;
+      border-top: 3px solid #168;
+      font-size: 14px;
+      text-align: center;
+      margin: auto;
+      width: 100%;
+      margin-top: 25px;
+
+
+      ${mq.maxWidth("xl")`
+      font-size: 12px;
+      `}
+
+${mq.maxWidth("md")`
+        font-size: 10px;
+      `}
+
+      ${mq.minWidth("lg")`
+      display:none
+      `}
+
+      th {
+        color: #168;
+        background: #f0f6f9;
+        padding: 10px;
+        border: 1px solid #ddd;
+
+        ${mq.maxWidth("xl")`
+        padding: 5px;
+      `}
+
+        &:first-child {
+          border-left: 0;
+        }
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+
+      td {
+        padding: 10px;
+        border: 1px solid #ddd;
+
+        img {
+          width: 70px;
+
+          ${mq.maxWidth("md")`
+          width: 40px;
+      `}
+        }
+
+        ${mq.maxWidth("xl")`
+        padding: 5px;
+      `}
+
+        &:first-child {
+          border-left: 0;
+        }
+
+        &:last-child {
+          border-right: 0;
+        }
       }
     }
   }
@@ -194,7 +341,7 @@ const ProductManagement = memo(() => {
   // 상품 추가 페이지로 이동
   const onClickAddProduct = useCallback((e) => {
     e.preventDefault();
-    navigate('/admin/product_register');
+    navigate("/admin/product_register");
   });
 
   // 제품 삭제 이벤트
@@ -216,7 +363,8 @@ const ProductManagement = memo(() => {
 
       try {
         const response = await axios.get(
-          `/api/product/${current.dataset.prodno}`);
+          `/api/product/${current.dataset.prodno}`
+        );
         item = response.data.item;
       } catch (err) {
         item = err.response.data;
@@ -352,7 +500,7 @@ const ProductManagement = memo(() => {
             </div>
           </form>
           <div className="product">
-            <Table style={{ 'marginTop' : '25px'}}>
+            <table className="table">
               <thead>
                 <tr>
                   <th>Prodno</th>
@@ -387,8 +535,8 @@ const ProductManagement = memo(() => {
                         </td>
                         <td>{v.title}</td>
                         <td>{v.price}</td>
-                        <td>{v.content.substring(0, 50)}...</td>
-                        <td>{v.size.substring(0, 50)}...</td>
+                        <td>{v.content.substring(0, 25)}...</td>
+                        <td>{v.size.substring(0, 25)}...</td>
                         <td>{v.is_sell}</td>
                         <td>
                           <button value={v.prodno} onClick={moveToEdit}>
@@ -414,7 +562,56 @@ const ProductManagement = memo(() => {
                   </tr>
                 )}
               </tbody>
-            </Table>
+            </table>
+            <table className="mobileTable">
+              <thead>
+                <tr>
+                  <th>Prodno</th>
+                  <th>Img</th>
+                  <th>Title</th>
+                  <th>Price</th>
+                  <th>Is_sell</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {data?.length > 0 ? (
+                  data.map((v, i) => {
+                    return (
+                      <tr key={i}>
+                        <td>{v.prodno}</td>
+                        <td>
+                          <img src={v.img1} alt={v.title} />
+                        </td>
+                        <td>{v.title}</td>
+                        <td>{v.price}</td>
+                        <td>{v.is_sell}</td>
+                        <td>
+                          <button value={v.prodno} onClick={moveToEdit}>
+                            Edit
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            onClick={onClickDelete}
+                            data-prodno={v.prodno}
+                          >
+                            Delete
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })
+                ) : (
+                  <tr>
+                    <td colSpan={9} align="center">
+                      There is no user data.
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
             {data?.length > 0 && pagenation && (
               <Pagenation pagenation={pagenation} />
             )}

@@ -15,6 +15,10 @@ const Container = styled.div`
   margin: auto;
   margin-bottom: 200px;
 
+  ${mq.maxWidth("xsm")`
+       width: 300px;
+    `}
+
   hr {
     margin: 50px 0;
   }
@@ -109,6 +113,10 @@ const ProductContainer = styled.div`
     margin-top: -150px;
     margin-bottom: 150px;
   `}
+
+${mq.maxWidth("xsm")`
+       width: 300px;
+    `}
 
   .container {
     hr {

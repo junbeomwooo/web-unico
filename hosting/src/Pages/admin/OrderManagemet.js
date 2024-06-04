@@ -10,8 +10,8 @@ import {
 } from "../../slices/GuestOrderDetailSlice";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import mq from "../../MediaQuery/MediaQuery";
 
-import Table from "../../components/Table";
 import Spinner from "../../components/Spinner";
 import ErrorView from "../../components/ErrorView";
 import Pagenation from "../../helper/Pagenation";
@@ -19,18 +19,32 @@ import Pagenation from "../../helper/Pagenation";
 const Container = styled.div`
   padding: 30px 50px;
   box-sizing: border-box;
-  width: 85%;
+  width: 100%;
   height: 1600px;
+  margin-left: 250px;
+
+  ${mq.maxWidth("md")`
+      margin-left: 0;
+      padding: 30px 20px;
+    `}
 
   hr {
     border: 0.5px solid #212b34;
     margin-top: 20px;
+
+    ${mq.maxWidth("md")`
+      margin-top: 100px;
+      `}
   }
 
   .header {
     display: flex;
     justify-content: center;
     margin: 10px 0;
+
+    ${mq.maxWidth("md")`
+      display:none
+      `}
     h1 {
       font-size: 28px;
       font-weight: 700;
@@ -48,6 +62,10 @@ const Container = styled.div`
   .search {
     display: flex;
     justify-content: center;
+
+    ${mq.maxWidth("md")`
+      display:block
+      `}
 
     .classfication {
       margin: 20px 0;
@@ -90,6 +108,11 @@ const Container = styled.div`
         h4 {
           font-weight: 400;
           font-size: 14px;
+
+          ${mq.maxWidth("md")`
+            margin: 50px 0 0 -90px;
+            color: white;
+      `}
         }
 
         select {
@@ -105,6 +128,11 @@ const Container = styled.div`
           font-weight: 400;
           font-size: 14px;
           margin-right: 10px;
+
+          ${mq.maxWidth("md")`
+            margin: 30px 0 0 -70px;
+            color: white;
+      `}
         }
       }
 
@@ -112,6 +140,9 @@ const Container = styled.div`
         display: flex;
         align-items: center;
         margin-top: -20px;
+        ${mq.maxWidth("md")`
+            margin-top: -10px;
+      `}
 
         h4 {
           font-weight: 400;
@@ -133,6 +164,142 @@ const Container = styled.div`
       }
     }
   }
+
+  .table {
+    border-collapse: collapse;
+    border-top: 3px solid #168;
+    font-size: 14px;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    margin-top: 25px;
+
+    ${mq.maxWidth("xl")`
+      font-size: 10px;
+      `}
+
+    ${mq.maxWidth("lg")`
+      display:none
+      `}
+
+      th {
+      color: #168;
+      background: #f0f6f9;
+      padding: 10px;
+      border: 1px solid #ddd;
+
+      ${mq.maxWidth("xl")`
+        padding: 2px;
+      `}
+
+      &:first-child {
+        border-left: 0;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+
+    td {
+      padding: 10px;
+      border: 1px solid #ddd;
+
+      ${mq.maxWidth("xl")`
+        padding: 3px;
+      `}
+
+      &:first-child {
+        border-left: 0;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+
+  .mobileTable {
+    border-collapse: collapse;
+    border-top: 3px solid #168;
+    font-size: 14px;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    margin-top: 25px;
+
+    ${mq.maxWidth("xl")`
+      font-size: 10px;
+      `}
+
+    ${mq.maxWidth("md")`
+      font-size: 7px;
+      `}
+
+      ${mq.minWidth("lg")`
+      display:none
+      `}
+
+      th {
+      color: #168;
+      background: #f0f6f9;
+      padding: 10px;
+      border: 1px solid #ddd;
+
+      ${mq.maxWidth("xl")`
+        padding: 2px;
+      `}
+
+      &:first-child {
+        border-left: 0;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+
+    td {
+      padding: 10px;
+      border: 1px solid #ddd;
+
+      select {
+        ${mq.maxWidth("md")`
+            width: 60px;
+            font-size: 10px;
+      `}
+      }
+
+      button {
+        ${mq.maxWidth("md")`
+            width: 60px;
+            height: 17px;
+            margin-top: 5px;
+            font-size: 10px;
+      `}
+      }
+
+      img {
+        width: 70px;
+
+        ${mq.maxWidth("xl")`
+          width: 30px;
+      `}
+      }
+
+      ${mq.maxWidth("xl")`
+        padding: 2px;
+      `}
+
+      &:first-child {
+        border-left: 0;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
 `;
 
 const Select = styled.select`
@@ -142,6 +309,13 @@ const Select = styled.select`
 
 const DatePickerContainer = styled.div`
   margin-right: 10px; // 오른쪽 마진을 원하는 크기로 조절
+  .react-datepicker__input-container {
+    input {
+      ${mq.maxWidth("md")`
+        width: 100px;
+    `}
+    }
+  }
 `;
 const OrderManagemet = memo(() => {
   // 강제 이동 함수 생성
@@ -548,7 +722,7 @@ const OrderManagemet = memo(() => {
           {checkmember === true ? (
             <>
               {/** 테이블 */}
-              <Table>
+              <table className="table">
                 <thead>
                   <tr>
                     <th>OrderNo</th>
@@ -674,7 +848,116 @@ const OrderManagemet = memo(() => {
                     </tr>
                   )}
                 </tbody>
-              </Table>
+              </table>
+              <table className="mobileTable">
+                <thead>
+                  <tr>
+                    <th>OrderNo</th>
+                    <th>Email</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Total Payment</th>
+                    <th>Payment Method</th>
+                    <th>Order Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {orderData?.length > 0 ? (
+                    orderData.map((v, i) => {
+                      /** 클라이언트에서  같은 제품을 구매한 경우에는 orderno값을 항상 첫번째 상품만 대입하는 문제가 있어서 컨트롤러 파일에서 자체적으로 데이터를 합친 후 전송 */
+                      const productDetail = v.productDetail;
+
+                      return (
+                        <tr key={i}>
+                          <td
+                            style={{ cursor: "pointer" }}
+                            onClick={(e) => onClickMoveToDetail(e, v?.orderno)}
+                          >
+                            {v?.orderno}
+                          </td>
+                          <td
+                            style={{ cursor: "pointer" }}
+                            onClick={(e) => onClickMoveToDetail(e, v?.orderno)}
+                          >
+                            {v?.email}
+                          </td>
+                          <td
+                            style={{ cursor: "pointer" }}
+                            onClick={(e) => onClickMoveToDetail(e, v?.orderno)}
+                          >
+                            {v?.name}
+                          </td>
+                          <td
+                            style={{ cursor: "pointer" }}
+                            onClick={(e) => onClickMoveToDetail(e, v?.orderno)}
+                          >
+                            {v?.quantity}
+                          </td>
+                          <td
+                            style={{ cursor: "pointer" }}
+                            onClick={(e) => onClickMoveToDetail(e, v?.orderno)}
+                          >
+                            ${v?.tprice}
+                          </td>
+                          <td
+                            style={{ cursor: "pointer" }}
+                            onClick={(e) => onClickMoveToDetail(e, v?.orderno)}
+                          >
+                            {v?.payment_method}
+                          </td>
+                          <td
+                            style={{ cursor: "pointer" }}
+                            onClick={(e) => onClickMoveToDetail(e, v?.orderno)}
+                          >
+                            {v?.order_date.substring(0, 10)}
+                          </td>
+                          <td>
+                            <select
+                              value={selectedStatus[v?.orderno] || v?.status}
+                              onChange={(e) =>
+                                setSelectedStatus((prev) => ({
+                                  ...prev,
+                                  [v?.orderno]: e.target.value,
+                                }))
+                              }
+                            >
+                              <option value="Payment Verification">
+                                Payment Verification
+                              </option>
+                              <option value="Order Placed">Order Placed</option>
+                              <option value="Order Preparation">
+                                Order Preparation
+                              </option>
+                              <option value="Shipped">Shipped</option>
+                              <option value="Delivered">Delivered</option>
+                              <option value="Refund Processing">
+                                Refund Processing
+                              </option>
+                              <option value="Refund Completed">
+                                Refund Completed
+                              </option>
+                            </select>
+                            <button
+                              style={{ marginLeft: "10px" }}
+                              onClick={EditStatus}
+                              data-orderno={v?.orderno}
+                            >
+                              Edit
+                            </button>
+                          </td>
+                        </tr>
+                      );
+                    })
+                  ) : (
+                    <tr>
+                      <td colSpan="10" align="center">
+                        There is no result.
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
               {orderData?.length > 0 && (
                 <Pagenation pagenation={orderPagenation} />
               )}
@@ -682,7 +965,7 @@ const OrderManagemet = memo(() => {
           ) : (
             <>
               {/** 테이블 */}
-              <Table>
+              <table className="table">
                 <thead>
                   <tr>
                     <th>Non-OrderNo</th>
@@ -829,7 +1112,133 @@ const OrderManagemet = memo(() => {
                     </tr>
                   )}
                 </tbody>
-              </Table>
+              </table>
+              <table className="mobileTable">
+                <thead>
+                  <tr>
+                    <th>Non-OrderNo</th>
+                    <th>Email</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Total Payment</th>
+                    <th>Payment Method</th>
+                    <th>Order Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {guestOrderData?.length > 0 ? (
+                    guestOrderData.map((v, i) => {
+                      /** 클라이언트에서  같은 제품을 구매한 경우에는 guest_orderno 항상 첫번째 상품만 대입하는 문제가 있어서 컨트롤러 파일에서 자체적으로 데이터를 합친 후 전송 */
+                      const productDetail = v.productDetail;
+
+                      return (
+                        <tr key={i}>
+                          <td
+                            style={{ cursor: "pointer" }}
+                            onClick={(e) =>
+                              onClickMoveToGuestDetail(e, v?.guest_orderno)
+                            }
+                          >
+                            {v?.guest_orderno}
+                          </td>
+                          <td
+                            style={{ cursor: "pointer" }}
+                            onClick={(e) =>
+                              onClickMoveToGuestDetail(e, v?.guest_orderno)
+                            }
+                          >
+                            {v?.email}
+                          </td>
+                          <td
+                            style={{ cursor: "pointer" }}
+                            onClick={(e) =>
+                              onClickMoveToGuestDetail(e, v?.guest_orderno)
+                            }
+                          >
+                            {v?.name}
+                          </td>
+                          <td
+                            style={{ cursor: "pointer" }}
+                            onClick={(e) =>
+                              onClickMoveToGuestDetail(e, v?.guest_orderno)
+                            }
+                          >
+                            {v?.quantity}
+                          </td>
+                          <td
+                            style={{ cursor: "pointer" }}
+                            onClick={(e) =>
+                              onClickMoveToGuestDetail(e, v?.guest_orderno)
+                            }
+                          >
+                            ${v?.tprice}
+                          </td>
+                          <td
+                            style={{ cursor: "pointer" }}
+                            onClick={(e) =>
+                              onClickMoveToGuestDetail(e, v?.guest_orderno)
+                            }
+                          >
+                            {v?.payment_method}
+                          </td>
+                          <td
+                            style={{ cursor: "pointer" }}
+                            onClick={(e) =>
+                              onClickMoveToGuestDetail(e, v?.guest_orderno)
+                            }
+                          >
+                            {v?.order_date.substring(0, 10)}
+                          </td>
+                          <td>
+                            <select
+                              value={
+                                guestSelectedStatus[v?.guest_orderno] ||
+                                v?.status
+                              }
+                              onChange={(e) =>
+                                setGuestSelectedStatus((prev) => ({
+                                  ...prev,
+                                  [v?.guest_orderno]: e.target.value,
+                                }))
+                              }
+                            >
+                              <option value="Payment Verification">
+                                Payment Verification
+                              </option>
+                              <option value="Order Placed">Order Placed</option>
+                              <option value="Order Preparation">
+                                Order Preparation
+                              </option>
+                              <option value="Shipped">Shipped</option>
+                              <option value="Delivered">Delivered</option>
+                              <option value="Refund Processing">
+                                Refund Processing
+                              </option>
+                              <option value="Refund Completed">
+                                Refund Completed
+                              </option>
+                            </select>
+                            <button
+                              style={{ marginLeft: "10px" }}
+                              onClick={guestEditStatus}
+                              data-guestno={v?.guest_orderno}
+                            >
+                              Edit
+                            </button>
+                          </td>
+                        </tr>
+                      );
+                    })
+                  ) : (
+                    <tr>
+                      <td colSpan="10" align="center">
+                        There is no result.
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
               {guestOrderData?.length > 0 && (
                 <Pagenation pagenation={guestOrderPagenation} />
               )}

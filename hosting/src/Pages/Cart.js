@@ -20,6 +20,10 @@ const Container = styled.div`
     display:block;
   `}
 
+${mq.maxWidth("xsm")`
+      padding: 100px 30px 200px 30px;
+    `}
+
   .shoppingCartContainer {
     width: 70%;
 
