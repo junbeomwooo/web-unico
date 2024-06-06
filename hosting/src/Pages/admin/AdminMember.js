@@ -2,7 +2,6 @@ import React, { memo, useState, useEffect, useCallback, useRef } from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { getList } from "../../slices/MemberSlice";
-import { orderGetList } from "../../slices/OrderDetailSlice";
 import { useQueryString } from "../../hooks/useQueryString";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -246,7 +245,7 @@ const AdminMember = memo(() => {
         sortOption: sortOption,
       })
     );
-    dispatch(orderGetList());
+    // dispatch(orderGetList());
   }, [page, dispatch]);
 
   /** 이벤트 목록 */

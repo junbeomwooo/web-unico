@@ -223,6 +223,7 @@ const Sunglasses = memo(() => {
       setSortBy("prodno");
       setSortOrder("desc");
       setCurrentPage(1);
+      setSortOpen(false);
     },
     [sortBy, sortOrder]
   );
@@ -237,6 +238,7 @@ const Sunglasses = memo(() => {
       setSortBy("prodno");
       setSortOrder("asc");
       setCurrentPage(1);
+      setSortOpen(false);
     },
     [sortBy, sortOrder]
   );
@@ -251,6 +253,7 @@ const Sunglasses = memo(() => {
       setSortBy("price");
       setSortOrder("asc");
       setCurrentPage(1);
+      setSortOpen(false);
     },
     [sortBy, sortOrder]
   );
@@ -265,11 +268,10 @@ const Sunglasses = memo(() => {
       setSortBy("price");
       setSortOrder("desc");
       setCurrentPage(1);
+      setSortOpen(false);
     },
     [sortBy, sortOrder]
   );
-
-  console.log(allData);
 
   return (
     <>

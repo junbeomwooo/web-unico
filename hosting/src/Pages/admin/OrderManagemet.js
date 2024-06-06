@@ -435,9 +435,15 @@ const OrderManagemet = memo(() => {
       const sumbitOrderStatus = orderStatus === "all" ? "" : orderStatus;
       const submitOrderMethod = orderMethod === "all" ? "" : orderMethod;
 
-      // date객체를 원하는 형식으로 변환
-      const submitStartDate = startDate?.toISOString().split("T")[0];
-      const submittedEndDate = endDate?.toISOString().split("T")[0];
+      const options = { year: 'numeric', month: '2-digit', day: '2-digit', timeZone: 'Europe/Copenhagen' };
+
+      // DK 타임존 적용 및 형식 YYYY-MM-DD 변경
+      const submitStartDate = startDate
+        ? new Intl.DateTimeFormat('en-GB', options).format(startDate).split('/').reverse().join('-')
+        : null;
+      const submittedEndDate = endDate
+        ? new Intl.DateTimeFormat('en-GB', options).format(endDate).split('/').reverse().join('-')
+        : null;
 
       if (checkBoxchecked === "member") {
         setCheckMember(true);

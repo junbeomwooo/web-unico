@@ -124,7 +124,7 @@ const Contact = memo(() => {
             <h1>Email</h1>
             <h4>Pleases send us details and contact information we will reach you within two business days. </h4>
             <h4>
-                Email : junbeom.woo@gmail.com
+                Email : junbeom2.woo@gmail.com
             </h4>
         </div>
       </Box>
