@@ -298,7 +298,7 @@ const Main = styled.div`
 `;
 const MainPage = memo(() => {
   /** 윈도우 사이즈에 따라 동셩상,이미지 url 변경 상태값 */
-  const [isMobile, setIsMobile] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 650);
 
   const { fontcolor } = useSelector((state) => state.colorReducer);
   const dispatch = useDispatch();
@@ -356,8 +356,8 @@ const MainPage = memo(() => {
   }, []);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     handleResize(); // 초기 켜졌을떄 윈도우 크기 확인
+    window.scrollTo(0, 0);
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
     return () => {
