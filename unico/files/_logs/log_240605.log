@@ -1,0 +1,181 @@
+24/06/05 19:23:51 073 [debug] : --------------------------------------------------
+24/06/05 19:23:51 074 [debug] : |              Start Express Server              |
+24/06/05 19:23:51 074 [debug] : --------------------------------------------------
+24/06/05 19:23:51 074 [debug] : server address => http://192.168.1.192:3001
+24/06/05 19:23:51 074 [debug] : -------------------------------------------------
+24/06/05 19:23:53 673 [debug] : 클라이언트가 접속했습니다.
+24/06/05 19:23:53 674 [debug] : [GET] http://localhost:3001/static/js/main.dc87fc0e.js
+24/06/05 19:23:53 674 [debug] : [client] 127.0.0.1 / OS X / Chrome (125.0.0.0) / Apple Mac
+24/06/05 19:23:53 677 [debug] : 클라이언트가 접속했습니다.
+24/06/05 19:23:53 678 [debug] : [GET] http://localhost:3001/static/css/main.7a20afcd.css
+24/06/05 19:23:53 678 [debug] : [client] 127.0.0.1 / OS X / Chrome (125.0.0.0) / Apple Mac
+24/06/05 19:23:53 679 [debug] : 클라이언트가 접속했습니다.
+24/06/05 19:23:53 679 [debug] : [GET] http://localhost:3001/static/js/main.aa0ddc8b.js
+24/06/05 19:23:53 679 [debug] : [client] 127.0.0.1 / OS X / Chrome (125.0.0.0) / Apple Mac
+24/06/05 19:23:53 681 [error] : PageNotFoundException: 페이지를 찾을 수 없습니다.
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/server/app.js:201:48
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:286:9
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:280:10)
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:91:12)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+24/06/05 19:23:53 684 [debug] : 클라이언트의 접속이 종료되었습니다. ::: [runtime] 10ms
+24/06/05 19:23:53 684 [debug] : --------------------------------------------------
+24/06/05 19:23:53 684 [error] : PageNotFoundException: 페이지를 찾을 수 없습니다.
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/server/app.js:201:48
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:286:9
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:280:10)
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:91:12)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+24/06/05 19:23:53 685 [debug] : 클라이언트의 접속이 종료되었습니다. ::: [runtime] 7ms
+24/06/05 19:23:53 685 [debug] : --------------------------------------------------
+24/06/05 19:23:53 685 [error] : PageNotFoundException: 페이지를 찾을 수 없습니다.
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/server/app.js:201:48
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:286:9
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:280:10)
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:91:12)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+24/06/05 19:23:53 686 [debug] : 클라이언트의 접속이 종료되었습니다. ::: [runtime] 7ms
+24/06/05 19:23:53 686 [debug] : --------------------------------------------------
+24/06/05 19:23:53 978 [debug] : 클라이언트가 접속했습니다.
+24/06/05 19:23:53 979 [debug] : [GET] http://localhost:3001/static/js/main.a1c72683.js
+24/06/05 19:23:53 979 [debug] : [client] 127.0.0.1 / OS X / Chrome (125.0.0.0) / Apple Mac
+24/06/05 19:23:53 979 [error] : PageNotFoundException: 페이지를 찾을 수 없습니다.
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/server/app.js:201:48
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:286:9
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:280:10)
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:91:12)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+24/06/05 19:23:53 980 [debug] : 클라이언트의 접속이 종료되었습니다. ::: [runtime] 2ms
+24/06/05 19:23:53 980 [debug] : --------------------------------------------------
+24/06/05 19:23:53 981 [debug] : 클라이언트가 접속했습니다.
+24/06/05 19:23:53 981 [debug] : [GET] http://localhost:3001/static/js/main.7fd3e0ea.js
+24/06/05 19:23:53 981 [debug] : [client] 127.0.0.1 / OS X / Chrome (125.0.0.0) / Apple Mac
+24/06/05 19:23:53 982 [debug] : 클라이언트가 접속했습니다.
+24/06/05 19:23:53 982 [debug] : [GET] http://localhost:3001/static/js/main.795eba0f.js
+24/06/05 19:23:53 982 [debug] : [client] 127.0.0.1 / OS X / Chrome (125.0.0.0) / Apple Mac
+24/06/05 19:23:53 982 [error] : PageNotFoundException: 페이지를 찾을 수 없습니다.
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/server/app.js:201:48
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:286:9
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:280:10)
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:91:12)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+24/06/05 19:23:53 983 [debug] : 클라이언트의 접속이 종료되었습니다. ::: [runtime] 2ms
+24/06/05 19:23:53 983 [debug] : --------------------------------------------------
+24/06/05 19:23:53 983 [error] : PageNotFoundException: 페이지를 찾을 수 없습니다.
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/server/app.js:201:48
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:286:9
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:280:10)
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:91:12)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+24/06/05 19:23:53 984 [debug] : 클라이언트의 접속이 종료되었습니다. ::: [runtime] 2ms
+24/06/05 19:23:53 984 [debug] : --------------------------------------------------
+24/06/05 19:23:53 988 [debug] : 클라이언트가 접속했습니다.
+24/06/05 19:23:53 988 [debug] : [GET] http://localhost:3001/static/js/main.f7f4c8de.js
+24/06/05 19:23:53 988 [debug] : [client] 127.0.0.1 / OS X / Chrome (125.0.0.0) / Apple Mac
+24/06/05 19:23:53 989 [error] : PageNotFoundException: 페이지를 찾을 수 없습니다.
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/server/app.js:201:48
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:286:9
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:280:10)
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:91:12)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+24/06/05 19:23:53 989 [debug] : 클라이언트의 접속이 종료되었습니다. ::: [runtime] 1ms
+24/06/05 19:23:53 989 [debug] : --------------------------------------------------
+24/06/05 19:23:53 990 [debug] : 클라이언트가 접속했습니다.
+24/06/05 19:23:53 990 [debug] : [GET] http://localhost:3001/static/js/main.2aaef50e.js
+24/06/05 19:23:53 990 [debug] : [client] 127.0.0.1 / OS X / Chrome (125.0.0.0) / Apple Mac
+24/06/05 19:23:53 991 [debug] : 클라이언트가 접속했습니다.
+24/06/05 19:23:53 991 [debug] : [GET] http://localhost:3001/static/js/main.935bd06a.js
+24/06/05 19:23:53 991 [debug] : [client] 127.0.0.1 / OS X / Chrome (125.0.0.0) / Apple Mac
+24/06/05 19:23:53 991 [error] : PageNotFoundException: 페이지를 찾을 수 없습니다.
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/server/app.js:201:48
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:286:9
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:280:10)
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:91:12)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+24/06/05 19:23:53 992 [debug] : 클라이언트의 접속이 종료되었습니다. ::: [runtime] 2ms
+24/06/05 19:23:53 992 [debug] : --------------------------------------------------
+24/06/05 19:23:53 992 [error] : PageNotFoundException: 페이지를 찾을 수 없습니다.
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/server/app.js:201:48
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:286:9
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:280:10)
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:91:12)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+24/06/05 19:23:53 993 [debug] : 클라이언트의 접속이 종료되었습니다. ::: [runtime] 2ms
+24/06/05 19:23:53 993 [debug] : --------------------------------------------------
+24/06/05 19:23:53 993 [debug] : 클라이언트가 접속했습니다.
+24/06/05 19:23:53 994 [debug] : [GET] http://localhost:3001/static/js/main.d42ad24c.js
+24/06/05 19:23:53 994 [debug] : [client] 127.0.0.1 / OS X / Chrome (125.0.0.0) / Apple Mac
+24/06/05 19:23:53 994 [error] : PageNotFoundException: 페이지를 찾을 수 없습니다.
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/server/app.js:201:48
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+    at /Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:286:9
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:280:10)
+    at Layer.handle [as handle_request] (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/layer.js:91:12)
+    at trim_prefix (/Users/junbeom/Desktop/공부/portfolio/web-unico/node_modules/express/lib/router/index.js:328:13)
+24/06/05 19:23:53 995 [debug] : 클라이언트의 접속이 종료되었습니다. ::: [runtime] 1ms
+24/06/05 19:23:53 995 [debug] : --------------------------------------------------
+24/06/05 19:24:16 308 [debug] : --------------------------------------------------
+24/06/05 19:24:16 309 [debug] : |              Start Express Server              |
+24/06/05 19:24:16 309 [debug] : --------------------------------------------------
+24/06/05 19:24:16 309 [debug] : server address => http://192.168.1.192:3001
+24/06/05 19:24:16 309 [debug] : -------------------------------------------------
+24/06/05 19:29:59 979 [debug] : --------------------------------------------------
+24/06/05 19:29:59 980 [debug] : |              Start Express Server              |
+24/06/05 19:29:59 980 [debug] : --------------------------------------------------
+24/06/05 19:29:59 980 [debug] : server address => http://192.168.1.192:3001
+24/06/05 19:29:59 980 [debug] : -------------------------------------------------
+24/06/05 19:30:38 457 [debug] : --------------------------------------------------
+24/06/05 19:30:38 459 [debug] : |              Start Express Server              |
+24/06/05 19:30:38 459 [debug] : --------------------------------------------------
+24/06/05 19:30:38 459 [debug] : server address => http://192.168.1.192:3001
+24/06/05 19:30:38 460 [debug] : -------------------------------------------------
+24/06/05 19:31:06 653 [debug] : 백엔드가 종료되었습니다.

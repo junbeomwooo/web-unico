@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CartMapper">
+
+    <!-- 회원번호를 통한 다중행 카트정보 조회 -->
+    <select id="selectList">
+        SELECT cartno, member_userno, product_prodno, quantity, tprice
+        FROM cart
+        <where>
+            <!-- 멤버번호가 있을 경우 -->
+            <if test="member_userno != null and member_userno != ''">
+                member_userno = #{member_userno}
+            </if>
+        </where>
+    </select>
+
+      <!-- 유저번호를 통한 한 명의 회원 정보 조회를 위한 기능 -->
+    <select id="selectItem">
+        SELECT cartno, member_userno, product_prodno, quantity, tprice 
+        FROM cart
+        WHERE cartno=#{cartno}
+    </select>
+
+    <!--  저장 -->
+     <insert id="insertItem">
+        insert INTO cart (member_userno, product_prodno, quantity, tprice) 
+        VALUES (#{member_userno}, #{product_prodno}, #{quantity}, #{tprice})
+     </insert>
+
+    <!-- 물품이 이미 카트안에 존재하는지 검사 -->
+    <select id="existCartProduct">
+        SELECT cartno, quantity, tprice FROM cart
+        WHERE member_userno = #{member_userno} AND product_prodno = #{product_prodno}
+    </select>
+
+    <!--  수량 값과 총액 변경-->
+    <update id="updateCartInfo">
+        UPDATE cart SET quantity=#{quantity}, tprice=#{tprice}
+        WHERE cartno=#{cartno};
+    </update>
+
+    <!-- 삭제 -->
+    <!-- 로그인한 멤버의 id값을 가져온후 로그인 중인 계정에서 클라이언트에서 삭제를 요청한 상품의 id값이 모두 일치하는 항목 삭제-->
+    <delete id="deleteItem">
+        DELETE FROM cart
+        WHERE member_userno = #{member_userno} AND product_prodno = #{product_prodno} 
+    </delete>
+
+    <!-- 한 회원의 카트 목록 수 조회 -->
+    <select id="selectCountAll">
+        SELECT COUNT(*) AS cnt FROM cart
+        WHERE member_userno = #{member_userno}
+    </select>
+
+    <!-- prodno값을 통한 삭제-->
+    <delete id="deleteByProdno">
+        DELETE FROM cart WHERE product_prodno=#{prodno}; 
+    </delete>
+
+</mapper>
