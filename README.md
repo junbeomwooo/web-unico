@@ -172,8 +172,10 @@ Additionally, I implemented efficient data processing and retrieval in dynamic w
     │   │   └── fontColorReducer.js
     │   └── store.js
     └── yarn.lock
-
-
 ```
+
+<br /> <br />
+## Features
+
 
  
