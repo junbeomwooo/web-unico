@@ -175,7 +175,5 @@ Additionally, I implemented efficient data processing and retrieval in dynamic w
 ```
 
 <br /> <br />
-## Features
-
 
  
