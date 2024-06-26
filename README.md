@@ -139,7 +139,7 @@ Additionally, I implemented efficient data processing and retrieval in dynamic w
     │   │   ├── mainpage
     │   │   │      .
     │   │   │      .
-    │   │   │      .
+    │   │   └──    .
     │   ├── components
     │   │   ├── ErrorView.js
     │   │   ├── Footer.js
