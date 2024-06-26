@@ -44,70 +44,11 @@ Additionally, I implemented efficient data processing and retrieval in dynamic w
     ├── public
     │   ├── asset-manifest.json
     │   ├── assets
-    │   │   └── img
-    │   │       ├── ryan.gif
-    │   │       └── upload.jpg
     │   ├── favicon.ico
     │   ├── index.html
-    │   ├── logo192.png
-    │   ├── logo512.png
-    │   ├── manifest.json
-    │   ├── ms-icon-310x310.png
-    │   ├── robots.txt
-    │   ├── static
-    │   │   ├── css
-    │   │   │   ├── main.7a20afcd.css
-    │   │   │   └── main.7a20afcd.css.map
-    │   │   ├── js
-    │   │   │   ├── main.7e5ffcc1.js
-    │   │   │   ├── main.7e5ffcc1.js.LICENSE.txt
-    │   │   │   ├── main.7e5ffcc1.js.map
-    │   │   │   ├── main.8bcfa3fd.js
-    │   │   │   ├── main.8bcfa3fd.js.LICENSE.txt
-    │   │   │   ├── main.8bcfa3fd.js.map
-    │   │   │   ├── reactPlayerDailyMotion.9239bc39.chunk.js
-    │   │   │   ├── reactPlayerDailyMotion.9239bc39.chunk.js.map
-    │   │   │   ├── reactPlayerFacebook.2ae515ca.chunk.js
-    │   │   │   ├── reactPlayerFacebook.2ae515ca.chunk.js.map
-    │   │   │   ├── reactPlayerFilePlayer.f1ab127e.chunk.js
-    │   │   │   ├── reactPlayerFilePlayer.f1ab127e.chunk.js.map
-    │   │   │   ├── reactPlayerKaltura.c31933c7.chunk.js
-    │   │   │   ├── reactPlayerKaltura.c31933c7.chunk.js.map
-    │   │   │   ├── reactPlayerMixcloud.982d3fb0.chunk.js
-    │   │   │   ├── reactPlayerMixcloud.982d3fb0.chunk.js.map
-    │   │   │   ├── reactPlayerMux.7d981519.chunk.js
-    │   │   │   ├── reactPlayerMux.7d981519.chunk.js.map
-    │   │   │   ├── reactPlayerPreview.ef014284.chunk.js
-    │   │   │   ├── reactPlayerPreview.ef014284.chunk.js.map
-    │   │   │   ├── reactPlayerSoundCloud.2f0268d8.chunk.js
-    │   │   │   ├── reactPlayerSoundCloud.2f0268d8.chunk.js.map
-    │   │   │   ├── reactPlayerStreamable.11a0a851.chunk.js
-    │   │   │   ├── reactPlayerStreamable.11a0a851.chunk.js.map
-    │   │   │   ├── reactPlayerTwitch.15af10f2.chunk.js
-    │   │   │   ├── reactPlayerTwitch.15af10f2.chunk.js.map
-    │   │   │   ├── reactPlayerVidyard.7dbaf84e.chunk.js
-    │   │   │   ├── reactPlayerVidyard.7dbaf84e.chunk.js.map
-    │   │   │   ├── reactPlayerVimeo.dfe56b06.chunk.js
-    │   │   │   ├── reactPlayerVimeo.dfe56b06.chunk.js.map
-    │   │   │   ├── reactPlayerWistia.54ce6c90.chunk.js
-    │   │   │   ├── reactPlayerWistia.54ce6c90.chunk.js.map
-    │   │   │   ├── reactPlayerYouTube.8fc35c15.chunk.js
-    │   │   │   └── reactPlayerYouTube.8fc35c15.chunk.js.map
-    │   │   └── media
-    │   │       ├── 3.183638646fe62a914062.avif
-    │   │       ├── 4.beaf33576a5c08c509d3.avif
-    │   │       ├── glasses.8b66887df38f3a976e53.png
-    │   │       ├── logo.75f46a9affbcd24b8b2e.png
-    │   │       ├── maison.a654da831e0146d4feb5.png
-    │   │       ├── mobile1.b8ec4569ce327cb178ca.jpg
-    │   │       ├── mobile2.0bc61f19ebb92513a6ae.jpg
-    │   │       ├── mobile3.a8e3c21ae57499a965d4.jpg
-    │   │       ├── mobile4.d320486794475d847265.jpg
-    │   │       ├── noimage.e10494364b4ed590210f.png
-    │   │       ├── search.f2d70afd1ebdca42594e.png
-    │   │       └── sunglasses.0e5e0ffdbde4526593d4.png
-    │   ├── video.mp4
-    │   └── video2.mp4
+    │   │          .
+    │   │          .
+    │   │          .
     ├── server
     │   ├── app.js
     │   ├── controllers
@@ -147,10 +88,10 @@ Additionally, I implemented efficient data processing and retrieval in dynamic w
     │   └── test
     │       ├── DepartmentAddItemTest.js
     │       ├── DepartmentDeleteItemTest.js
-    │       ├── DepartmentEditItemTest.js
-    │       ├── DepartmentGetCountTest.js
-    │       ├── DepartmentGetItemTest.js
-    │       └── DepartmentGetListTest.js
+    │       └── DepartmentEditItemTest.js
+    │                 .
+    │                 .
+    │                 .
     ├── src
     │   ├── App.js
     │   ├── MediaQuery
@@ -195,23 +136,10 @@ Additionally, I implemented efficient data processing and retrieval in dynamic w
     │   ├── Test.js
     │   ├── assets
     │   │   ├── buttons
-    │   │   │   ├── menu.png
-    │   │   │   ├── noimage.png
-    │   │   │   └── search.png
-    │   │   ├── logo.png
     │   │   ├── mainpage
-    │   │   │   ├── 3.avif
-    │   │   │   ├── 4.avif
-    │   │   │   ├── mobile1.jpg
-    │   │   │   ├── mobile2.jpg
-    │   │   │   ├── mobile3.jpg
-    │   │   │   ├── mobile4.jpg
-    │   │   │   └── unico.jpg
-    │   │   ├── maison.png
-    │   │   └── productpage
-    │   │       ├── glasses.png
-    │   │       ├── hello.jpeg
-    │   │       └── sunglasses.png
+    │   │   │      .
+    │   │   │      .
+    │   │   │      .
     │   ├── components
     │   │   ├── ErrorView.js
     │   │   ├── Footer.js
