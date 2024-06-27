@@ -10,7 +10,7 @@
 ## Introduction
 I have created a virtual brand named 'UNICO' specializing in selling sunglasses and eyeglasses.
 
-I created a responsive website with a backend server for smooth communication between clients and data.
+It is a responsive website with a backend server for smooth communication between clients and data.
 
 Additionally, I implemented efficient data processing and retrieval in dynamic web applications using MySQL.
 
